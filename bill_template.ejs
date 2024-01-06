@@ -1,0 +1,163 @@
+<!-- bill_template.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Bill</title>
+    <style>
+        /* Your CSS styles for bill formatting */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .bill-container {
+            width: 65%;
+            max-width: 400px;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .bill-info {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .items-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .items-list li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 5px;
+        }
+
+        .total-section {
+            margin-top: 30px;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .detail-names {
+            text-align: left;
+            flex: 1;
+        }
+
+        .detail-prices {
+            text-align: right;
+            flex: 1;
+        }
+
+        .thank-you {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        h5 {
+            text-align: center;
+        }
+
+        .logo {
+            font-family: ALGERIAN, Arial, sans-serif;
+            font-size: 40px;
+            font-weight: bold;
+            color: #333;
+            margin-right: auto;
+            margin-left: 30px;
+            /* Pushes the logout button to the right */
+            display: flex;
+            /* Ensure proper alignment of logo elements */
+            align-items: center;
+            /* Align elements vertically */
+            pointer-events: none;
+            text-align: center;
+
+        }
+
+        .logo span {
+            margin-left: 135px;
+            /* Adjust spacing between letters */
+        }
+    </style>
+</head>
+
+<body>
+    <div class="bill-container">
+        <div class="logo">
+            <span>BH</span>
+        </div>
+        <h5>
+            Address : RIT, Mathikere, 560054<br>
+            Contact : 9392116964
+            <div class="bill-info">
+                <p>Date: <%= date %>
+                </p>
+                <p>Table Number: <%= tnum %>
+                </p>
+            </div>
+        </h5>
+
+
+        <h3>Items:</h3>
+        <ul class="items-list">
+            <% items.forEach(item=> { %>
+                <li>
+                    <span>
+                        <%= item %>
+                    </span>
+                    <span>
+                        <%= itemPrices[item] %>/-
+                    </span>
+                </li>
+                <% }); %>
+        </ul>
+
+        <!-- Bill Details -->
+        <div class="total-section">
+            <div class="detail-names">
+                <p>Subtotal:</p>
+                <p>CGST (3.5%):</p>
+                <p>SGST (3.5%):</p>
+                <p>Grand Total:</p>
+            </div>
+            <div class="detail-prices">
+                <p>
+                    <%= subtotal %>/-
+                </p>
+                <p>
+                    <%= cgst %>/-
+                </p>
+                <p>
+                    <%= sgst %>/-
+                </p>
+                <p>
+                    <%= grandTotal %>/-
+                </p>
+            </div>
+        </div>
+
+        <!-- Thank you message -->
+        <div class="thank-you">
+            <p>Thank you 🙏, visit again!</p>
+        </div>
+    </div>
+</body>
+
+</html>
