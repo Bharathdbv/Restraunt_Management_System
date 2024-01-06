@@ -11,5 +11,5 @@ Key Features:
 ###### Employee Management: Keep track of employee information, assign roles, and manage work schedules.
 ###### Table Reservations: Allow customers to make reservations online, optimizing table allocation and reducing wait times.
 ###### Billing and Invoicing: Generate accurate bills, handle payments, and maintain transaction records seamlessly.
-###### This project was developed using VS Code as the IDE, utilizing Node.js, Express.js, and MongoDB. It provides a robust and scalable solution for restaurant owners and managers to streamline daily operations, improve customer service, and enhance overall efficiency.
+#### This project was developed using VS Code as the IDE, utilizing Node.js, Express.js, and MongoDB. It provides a robust and scalable solution for restaurant owners and managers to streamline daily operations, improve customer service, and enhance overall efficiency.
 
